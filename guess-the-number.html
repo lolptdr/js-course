@@ -1,0 +1,51 @@
+<html>
+	<head>
+  		<title>Guess the Number!</title>
+	</head>
+	<body>
+<!-- 	<label>Pick a Number from 1-100:</label>
+	<label id="response"></label>
+	<br />
+	<input id="user-input" type="text" />
+	<input id="submit-button" type="button" value="Guess" /> -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	// $('#response').text('Hi there!');
+
+	// $('#submit-button').on('click', function (e) {
+	//   alert("Yup, it's a button.");
+	// });
+
+	var secretNumber = parseInt(Math.random() * 100, 10) + 1;
+	var guess = prompt("Guess a number between 1 and 100");
+	// console.log(secretNumber);
+	var play = function(secretNumber, guess) {
+		if (guess > secretNumber) {
+			alert("Pick a lower number");
+			replay(secretNumber, guess);
+		} else if (guess < secretNumber) {
+			alert("Pick a higher number");
+			replay(secretNumber, guess);
+		} else if (guess == secretNumber) {
+			alert("You are the WINRAR! That's the correct number!");
+		} else {
+			alert("Not a number yo");
+			replay(secretNumber, guess);
+		}
+	}
+	var replay = function() {
+		if (guess == secretNumber) {
+			alert("You are the WINRAR! That's the correct number!");
+		} else {
+			guess = prompt("Guess a number between 1 and 100");
+			play(secretNumber, guess);
+		}
+	}
+
+	play(secretNumber, guess);
+
+
+	</script>
+	</body>
+</html>

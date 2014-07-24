@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <body>
+      <script type="text/javascript">
+      var first = prompt("What's your first name?");
+      var last =  prompt("What's your last name?");
+      alert("Hello, " + first + " " + last.toUpperCase() + "!");
+      </script>
+    </body>
+</html>
+
+
+<!-- function isEven(value) {
+var first = prompt("What's your first name?");
+var last =  prompt("What's your last name?");
+alert("Hello, " + first + " " + last.toUpperCase() + "!");
+
+var first = prompt("What's your first name?");
+var last =  prompt("What's your last name?");
+alert("Hello, " + first + " " + last + "!");
+
+
+var hey = prompt("What's your age?")
+if (hey < 21) {
+	alert("You can't come in");
+} else if (hey >= 21) {
+	alert("Come on in");
+} else if (hey < 0 || hey > 100) {
+	alert("GTFO");
+} else {
+	alert("wtf is this input. don't mess with me, punk");
+};
+
+function isEven(value) {
+	if (value%2 == 0)
+		console.log("EVEN STEVEN!!");
+	else if (value%7 == 0)
+		console.log("LUCKY");
+	else
+		console.log("fuck you");
+}
+
+var yell = function(str) {
+	//var str = prompt("give me a string");
+	var reply = str.toUpperCase();
+	console.log(reply);
+}
+
+var divideBy = function(val1,val2) {
+	// prompt
+	var result = val1 / val2;
+	console.log('Result should be: ' + result);
+}
+
+
+// 'null' and 'undefined' are like 'nil' in Ruby
+// == 'identity' vs. === 'equality'
+// identity will coerce type conversion, equality won't
+4 == 4 // true
+4 === 4 // true
+0 == '' // true
+0 === '' // false
+'5' == 5 // true
+'5' === 5 // false
+null == undefined // true
+null === undefined // false
+7 != 7 // false
+7 !== 7 // false
+0 != false // false
+0 !== false // true
+
+Truthy values
+if (true)   { 'Truthy!' } else { 'falsey.' }
+if ('hi')   { 'Truthy!' } else { 'falsey.' }
+
+Falsey values
+if (false)     { 'Truthy!' } else { 'falsey.' }
+if (null)      { 'Truthy!' } else { 'falsey.' }
+if (undefined) { 'Truthy!' } else { 'falsey.' }
+if (0)         { 'Truthy!' } else { 'falsey.' }
+if ('')        { 'Truthy!' } else { 'falsey.' }
+if (NaN)       { 'Truthy!' } else { 'falsey.' }
+
+
+
+var welcome = function(name1, name2) {
+    if (name2 === null) {
+        return 'Welcome, ' + name1 + "!";
+    } else if(name1 !== null && name2 !== null) {
+        return 'Welcome, ' + name1 + " ana " + name2 + "!";
+    }
+};
+
+var poke = function () {
+  console.log('ow');
+};
+poke();
+
+var askify = function (request) {
+    return "Can you please " + request + "?";
+};
+
+var result = askify("fix me");
+console.log('Result should be "Can you please fix me?":', result);
+
+
+var multiplyString = function (string, times) {
+  if (times === 0) {
+    return '';
+  }
+  else {
+    return string + multiplyString(string,times - 1);
+  }
+};
+
+var result = multiplyString('Mike', 5);
+console.log(result);
+
+// TODO:
+var addFive = function(val) {
+    result = val + 5;
+    return result
+}
+
+console.log("addFive(3) should be 8:", addFive(3));
+console.log("addFive(6) should be 11:", addFive(6));

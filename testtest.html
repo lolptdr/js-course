@@ -1,0 +1,27 @@
+<html>
+	<head>
+  		<title>input the Number!</title>
+	</head>
+	<body>
+	<label>Pick a Number from 1-100:</label>
+	<label id="response"></label>
+	<br />
+	<input id="user-input" type="text" />
+	<input id="submit-button" type="button" value="input" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+
+	$('#response').text('Hi there!');
+
+	$('#submit-button').on('click', function (e) {
+	  var input = $('#user-input').val();
+	  $('#response').text('You typed in: ' + input);
+	});
+
+	
+
+
+	</script>
+	</body>
+</html>
