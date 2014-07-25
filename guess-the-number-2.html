@@ -4,7 +4,8 @@
 	</head>
 	<body>
 		<label>Pick a Number from 1-100 and guess my secret number. Watch out for 3 landmines scattered between 1 and 100! Pick a landmine and game will be over!</label>
-		<label id="response1"> </label><label id="response2"></label>
+		<br>
+		<label id="response"></label>
 		<br />
 		<input id="user-input" type="text" placeholder="Put your guess here"/></label>
 		<br />
@@ -51,45 +52,57 @@
 		console.log(landmines);
 		console.log(proximity);
 
-		var bombCheck = function(input) {
-			proximity = checkDistance(input);
-			if (input === proximity) {
-				$('#landmine-check').text('BOOOOOOOOOOOOOOOM');
-			  $('#response').text('Game Over. Start a new game to start a new game.');
-			} else if (input !== proximity) {
-				$('#landmine-check').text('You are ' + proximity + ' away from a bomb. You lucky.');
-			};
-		};
+		// var bombCheck = function(input) {
+		// 	var proximity = checkDistance(input);
+		// 	if (input === proximity) {
+		// 		$('#landmine-check').text('BOOOOOOOOOOOOOOOM');
+		// 	  $('#response').text('Game Over. Start a new game to start a new game.');
+		// 	} else if (input != proximity) {
+		// 		$('#landmine-check').text('You are ' + proximity + ' away from a bomb. You lucky.');
+		// 	};
+		// };
 
 		var play = function(input) {
-			// console.log(input);
-			if (input > secretNumber) {
-				bombCheck(input);
-				$('#user-input').val('');
-				$('#response').text('Pick a lower number');
-			} else if (input < secretNumber) {
-				bombCheck(input);
-				$('#user-input').val('');
-				$('#response').text('Pick a higher number');
-			} else if (input === secretNumber) {
-				$('#user-input').val('');
-				$('#response').text("You are the WINRAR! That's the correct number!");
-			} else {
+			var proximity = checkDistance(input);
+			if (input !== proximity) {
+				$('#landmine-check').text('You are ' + proximity + ' away from a bomb. You lucky.');
+				if (input > secretNumber) {
+					$('#user-input').val('');
+					$('#response').text('Pick a lower number');
+				} else if (input < secretNumber) {
+					$('#user-input').val('');
+					$('#response').text('Pick a higher number');
+				} else if (input === secretNumber) {
+					$('#user-input').val('');
+					$('#response').text("You are the WINRAR! That's the correct number!");
+					$('#landmine-check').text('Landmine Status: whew!');
+					$('#submit-button').hide();
+				} 
+			} else if (input === parseInt(proximity)) {
+					$('#landmine-check').text('BOOOOOOOOOOOOOOOM');
+					$('#response').text('Game Over. Start a new game to start a new game.');
+					$('#submit-button').hide();
+			}	else {
 				$('#user-input').val('');
 				$('response').text("Not a number yo");
 			};
 		};
 
 		$('#submit-button').on('click', function (e) {
-		  input = $('#user-input').val();
+		  var input = +$('#user-input').val();
 		  console.log(input);
 		  play(input);
 		});
 
 		$('#new-game').on('click', function (e) {
 			secretNumber = parseInt(Math.random() * 100, 10) + 1;
+			landmineArray();
 			console.log(secretNumber);
+			console.log(landmines);
+			console.log(proximity);
+			$('#submit-button').show();
 			$('#response').text('New game started...');
+			$('#landmine-check').text('Landmine Status: scanning...');
 			$('#submit-button').on('click', function (e) {
 			  input = $('#user-input').val();
 			  console.log(input);
