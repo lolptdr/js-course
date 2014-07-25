@@ -86,11 +86,12 @@
 
 		$('#new-game').on('click', function (e) {
 			secretNumber = parseInt(Math.random() * 100, 10) + 1;
-			var landmines = landmineArray();
+			landmines = landmineArray();
 			var proximity = checkDistance(input);
-			console.log(secretNumber);
+			console.log("new game", secretNumber);
 			console.log(landmines);
 			console.log(proximity);
+			$('#user-input').val('');
 			$('#submit-button').show();
 			$('#response').text('New game started...');
 			$('#landmine-check').text('Landmine Status: scanning...');
