@@ -52,19 +52,13 @@
 		console.log(landmines);
 		console.log(proximity);
 
-		// var bombCheck = function(input) {
-		// 	var proximity = checkDistance(input);
-		// 	if (input === proximity) {
-		// 		$('#landmine-check').text('BOOOOOOOOOOOOOOOM');
-		// 	  $('#response').text('Game Over. Start a new game to start a new game.');
-		// 	} else if (input != proximity) {
-		// 		$('#landmine-check').text('You are ' + proximity + ' away from a bomb. You lucky.');
-		// 	};
-		// };
-
 		var play = function(input) {
 			var proximity = checkDistance(input);
-			if (input !== proximity) {
+			if (proximity === 0) {
+				$('#landmine-check').text('BOOOOOOOOOOOOOOOM');
+				$('#response').text('Game Over! Start a new game to start a new game.');
+				$('#submit-button').hide();
+			} else if (input !== proximity) {
 				$('#landmine-check').text('You are ' + proximity + ' away from a bomb. You lucky.');
 				if (input > secretNumber) {
 					$('#user-input').val('');
@@ -78,10 +72,6 @@
 					$('#landmine-check').text('Landmine Status: whew!');
 					$('#submit-button').hide();
 				} 
-			} else if (input === parseInt(proximity)) {
-					$('#landmine-check').text('BOOOOOOOOOOOOOOOM');
-					$('#response').text('Game Over. Start a new game to start a new game.');
-					$('#submit-button').hide();
 			}	else {
 				$('#user-input').val('');
 				$('response').text("Not a number yo");
@@ -96,18 +86,14 @@
 
 		$('#new-game').on('click', function (e) {
 			secretNumber = parseInt(Math.random() * 100, 10) + 1;
-			landmineArray();
+			var landmines = landmineArray();
+			var proximity = checkDistance(input);
 			console.log(secretNumber);
 			console.log(landmines);
 			console.log(proximity);
 			$('#submit-button').show();
 			$('#response').text('New game started...');
 			$('#landmine-check').text('Landmine Status: scanning...');
-			$('#submit-button').on('click', function (e) {
-			  input = $('#user-input').val();
-			  console.log(input);
-			  play(input);
-			});
 		});
 
 
