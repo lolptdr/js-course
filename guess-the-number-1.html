@@ -38,28 +38,30 @@
 		if (input > secretNumber) {
 			$('#user-input').val('');
 			$('#response').text('Pick a lower number');
-			replay(secretNumber, input);
+			// replay(secretNumber, input);
 		} else if (input < secretNumber) {
 			$('#user-input').val('');
 			$('#response').text('Pick a higher number');
-			replay(secretNumber, input);
+			// replay(secretNumber, input);
 		} else if (input == secretNumber) {
 			$('#user-input').val('');
 			$('#response').text("You are the WINRAR! That's the correct number!");
 		} else {
 			$('#user-input').val('');
 			$('response').text("Not a number yo");
-			replay(secretNumber, input);
+			// replay(secretNumber, input);
 		}
 	}
 
-	var replay = function() {
-		if (input == secretNumber) {
-			$('#response').text("You are the WINRAR! That's the correct number!");
-		} else {
-			play(input);
-		}
-	}
+// Remove the following function, using jquery not alerts/prompts:
+	// var replay = function() {
+	// 	var input = +$('#user-input').val();
+	// 	if (input == secretNumber) {
+	// 		$('#response').text("You are the WINRAR! That's the correct number!");
+	// 	} else {
+	// 		play(input);
+	// 	}
+	// }
 
 
 
