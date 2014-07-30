@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  var petshop = {
+    dog: 'Fido',
+    cat: 'Roger',
+    bird: 'Bigums',
+    mouse: 'Prince'
+  };
+
+  var wantedPetType = prompt("What kind of pet would you like?");
+  // if (wantedPetType === 'dog' || wantedPetType === 'cat' || wantedPetType === 'bird' || wantedPetType === 'mouse') {
+  	 if (wantedPetType in petshop) {
+  	alert(petshop[wantedPetType] + " is happy to have a home!");
+  } else {
+  	alert('That is not an available pet.');
+  };
+
+
+</script>
+
+</body>
+</html>

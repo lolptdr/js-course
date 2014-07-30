@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>Restaurant Reservations</title>
+</head>
+<body>
+
+<button id="claim">Claim a Reservations</button>
+<button id="reserve">Make a Reservations</button>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+var reservations = {
+  'Billy': { claimed: false },
+  'Joe' : { claimed: true }
+};
+
+$('#claim').on('click', function (e) {
+  var name = prompt("What is your name?");
+  if (name in reservations) {
+  	if ( reservations[name]['claimed'] === false ) {
+  		alert('Welcome to McDonalds, ' + name + "!");
+  	} else {
+  		alert('We have a reservation under your name already.');
+   	};
+  } else {
+  	alert('There is no reservation under that name.');
+  };
+});
+
+$('#reserve').on('click', function (e) {
+  var name = prompt("What name should we reserve under?");
+  if (name in reservations) {
+  	if ( reservations[name]['claimed'] === false ) {
+  		alert("There's another reservation under that name. Reserve under a different name.")
+  	} else {
+  		reservations[name] = {claimed: false }
+  		alert("Your new reservation has been created, " + name + "!");
+  	};
+  } else {
+  	reservations[name] = {claimed: false }
+  	alert("Your new reservation has been created, " + name + "!");
+  };
+});
+
+</script>
+</body>
+</html>
