@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>McDonald's Reservations</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css"> -->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#">McDonald's Reservation System</a></h1>
+            </li>
+             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+          </ul>
+
+          <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li class="active"><a href="#">Locations</a></li>
+              <li class="active"><a href="#">Order Menu</a></li>
+              <li class="has-dropdown">
+                <a href="#">Careers</a>
+                <ul class="dropdown">
+                  <li><a href="#">Search</a></li>
+                  <li><a href="#">Philosophy</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </nav>
+    </head>
+    <body>
+    
+
+    <header class="row">
+      <div class="small-6 large-2 columns">...</div>
+      <div class="small-6 large-8 columns">
+      	<label>Type your name in. Click on "Claim" to claim a reservation, otherwise click on "Make" to make a reservation.</label>
+      	<br>
+      	<input id="user-input" type="text" placeholder="Type your name here"/></label>
+      	<br>
+      	<button id="claim">Claim</button>
+      	<button id="reserve">Make</button>
+      	<br>
+      	<br>
+      	<label id="response" type="text"></label>
+      </div>
+      <div class="small-12 large-2 columns">...</div>
+    </header>
+
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/foundation.min.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
+    <!-- non vendor scripts -->
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/logic.js"></script>
+    <script type="text/javascript" src="js/presentation.js"></script>
+
+    </body>
+</html>
+
+
+
+<!-- <html>
+<head>
+  <title>McDonald's Reservations</title>
+</head>
+<body>
+<label>Welcome to McDonald's Reservation System!
+</label>
+<br>
+<label>Type your name in. Click on "Claim" to claim a reservation, otherwise click on "Make" to make a reservation.</label>
+<br>
+<input id="user-input" type="text" placeholder="Type your name here"/></label>
+<br>
+<button id="claim">Claim</button>
+<button id="reserve">Make</button>
+<br>
+<br>
+<label id="response" type="text"></label>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="./js/reserve.js"></script>
+</body>
+</html> -->
