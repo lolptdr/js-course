@@ -1,5 +1,10 @@
 <html>
-  <style type="text/css" src="css/style.css"></style>
+<style type="text/css">
+#bakery .display div { width: 200px; height: 200px; float: left; }
+#bakery .display .cupcake { background: url("http://i.imgur.com/9ix2JRZ.jpg"); }
+#bakery .display .cookie { background: url("http://i.imgur.com/Yxq78qn.jpg"); }
+#bakery .display .macaron { background: url("https://www.wickedgoodcupcakes.com/images/1/productImages/passion-fruit-macaron.jpg"); }
+</style>
 <head>
   <title>Bakery Bonanza</title>
 </head>
@@ -8,10 +13,13 @@
 <div id="bakery">
   <button class="make" data-good-type="cupcake">Make Cupcake</button>
   <button class="make" data-good-type="cookie">Make Cookie</button>
+  <button class="make" data-good-type="macaron">Make Macaron</button>
   <h4>Available Ingredients:</h4>
   <ul class="ingredients">
     <li class="flour">Flour: <span></span></li>
+    <li class="almondf">Almond Flour: <span></span></li>
     <li class="eggs">Eggs: <span></span></li>
+    <li class="eggwhite">Egg Whites: <span></span></li>
     <li class="sugar">Sugar: <span></span></li>
     <li class="spice">Spice: <span></span></li>
   </ul>
