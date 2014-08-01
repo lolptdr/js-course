@@ -8,7 +8,7 @@
         reservations[name]['claimed'] = true;
         $('#response').text('Welcome to McDonalds, ' + name + "!");
     	} else {
-        $('#response').text('Reservation has already been claimed.');
+        $('#response').text('Reservation has already been claimed. Please make a new reservation.');
      	};
     } else {
     	$('#response').text('There is no reservation under that name. Please make a new reservation.');

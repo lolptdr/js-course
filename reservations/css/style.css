@@ -6675,3 +6675,17 @@ th.hide-for-touch {
 body {
   background: url("../img/mcd.jpg") no-repeat;
   background-size: cover; }
+
+/* line 6, ../scss/main.sass */
+.instruct label {
+  color: white;
+  font-size: 2em;
+  text-align: center; }
+
+/* line 11, ../scss/main.sass */
+#user-input {
+  text-align: center; }
+
+/* line 14, ../scss/main.sass */
+.claimres {
+  text-align: center; }
