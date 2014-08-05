@@ -11,10 +11,42 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
+
   var whinyPerson = {
-    pokeCount: 0
+    pokeCount: 0,
+    poke: function() {
+    	this.pokeCount += 1;
+	}
   };
+
+  $('#poke').on('click', function () {
+  	whinyPerson.poke();
+  	console.log("Poke");
+  	$('#response').append(' ow');
+  	for(var i = 0; i < whinyPerson.pokeCount; i++){
+  		$('#response').append("!");
+  	}
+  });
+
 </script>
 
 </body>
 </html>
+
+
+
+
+<!-- You should see a whinyPerson object with a pokeCount property. Finish this script by:
+
+Writing a function assigned to whinyPerson.poke that increments pokeCount and adds (not replaces) an "ow!" message, with a space, to the response label. You'll need to use the .append() method.
+
+The new "ow!" message should have a number of exclamation marks equal to pokeCount. Use a 'for' loop for this.
+
+Call your new poke function when the user clicks the poke button. -->
+
+
+
+<!-- When the user clicks once: -->
+<!-- D: ow! -->
+<!-- When the user clicks three times: -->
+<!-- D: ow! ow!! ow!!! -->
