@@ -1,0 +1,118 @@
+
+<html lang="en">
+    <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+
+<!--     // Old:
+    // var greet = function () { alert('hi'); };
+    // setTimeout(greet, 2000);
+
+    // New:
+    // setTimeout(function () {
+    //  alert('hi');
+    //}, 2000); -->
+    	<button id="fire-laser">FIRE</button>
+
+      <script type="text/javascript">
+      var health = 5;
+
+      // var fireQuadLaser = function() {
+      //   if (health === 0) {
+      //     console.log("You're dead.");
+      //   } else {
+      //     health -= 1;
+      //     console.log('PEW PEW! Your health remaining is ' + health);
+      //   }
+      // };
+
+      $('#fire-laser').on('click', function() {
+        if (health === 0) {
+          console.log("You're dead.");
+        } else {
+          health -= 1;
+          console.log('PEW PEW! Your health remaining is ' + health);
+        }
+      });
+
+      </script>
+
+    </body>
+</html>
+
+
+<!--       	var message = "URGENT MESSAGE";
+
+      	var calm = function (phrase) {
+      	  return phrase.toLowerCase();
+      	};
+      	var whisper = calm;
+
+      	var whispered = whisper(message);
+
+      	console.log(whispered);
+ -->
+
+<!--  var x = 3;
+
+var decrement = function() {
+  x = x - 1;
+  return x;
+};
+var square = function() {
+  x = x * x;
+};
+
+var y = decrement();
+square();
+square(); -->
+
+<!-- var reportStatus = function (status, transformation) {
+  return transformation(status);
+};
+
+var status = "I'm afraid I can't do that, Dave.";
+
+var result = reportStatus(status, function(message) {
+  return message.toUpperCase();
+});
+ -->
+
+<!--  var cube = function (x) {
+  return x = x * x * x;
+};
+
+var result = cube(3);
+console.log("Result should be 27", result); -->
+
+<!--       var danger = function () {
+        alert('BOOM!');
+        return "danger";
+      };
+
+      console.log("You might be in " + danger()); -->
+
+
+<!--       var halve = function(x) {
+      	return x = x/2;
+      };
+
+      console.log("halve(20) should be 10", halve(20));
+      console.log("halve(100) should be 50", halve(100)); -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,220 @@
+
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var processPassword = function (password) {
+	  if (this.password === 'abc'){
+	  	return 'denied'
+	  }
+	};
+	var door1 = {
+	  password: 'abc',
+	  enterPassword: processPassword
+	};
+	var door2 = {
+	  password: '123',
+	  enterPassword: processPassword
+	};
+
+	var result;
+
+	result = door1.enterPassword('letmein');
+	console.log('Result should be denied:', result);
+	result = door1.enterPassword('abc');
+	console.log('Result should granted:', result);
+
+	result = door2.enterPassword('open up');
+	console.log('Result should be denied:', result);
+	result = door2.enterPassword('123');
+	console.log('Result should granted:', result);
+	
+</script>
+
+</body>
+</html>
+
+
+<!-- 	var orders = ['appetizer', 'breakfast', 'lunch', 'dessert'];
+	var hireCook = function (cook) {
+	  // Generates a random number from 0 to 3
+	  var ran = parseInt(Math.random() * 4, 10);
+
+	  var order = orders[ran];
+	  var dish = cook(order);
+	  console.log('New order:', order, ' - You cooked the dish:', dish);
+	};
+
+	// TODO
+	var alfred = function(order){
+		if (order === 'appetizer'){
+			return "chips & salsa";
+		} else if (order === 'breakfast'){
+			return "egg and cheese sandwich"
+		} else if (order === 'lunch'){
+			return "bulgogi"
+		} else if (order === 'dessert'){
+			return "macaron"
+		}
+
+	};
+
+	// Hire alfred for ten orders
+	for (var i=0; i < 10; i += 1) {
+	  hireCook(alfred);
+	} -->
+
+<!-- 	var setTicket = function (obj) {
+	  obj.ticketPrice = 99.95;
+	};
+
+	describe("setTicket", function () {
+	  it("sets a ticket an appropriate ticket price", function () {
+	    var museum = {
+	      name: "Ramen",
+	      description: "The exquisite history of fried noodles."
+	    };
+	    setTicket(museum);
+	    expect(typeof museum.ticketPrice).toEqual("number");
+	    expect(museum.ticketPrice).toEqual(99.95);
+	  });
+	}); -->
+
+
+
+
+
+<!-- 	var me = {
+		name: "Joseph",
+		accent: "French"
+	};
+
+	console.log("My name is " + me.name + " and I love the " + me.accent + " accent!"); -->
+
+
+
+<!-- 	var book = {
+	  title: "The Mummy at the Dining Room Table",
+	  author: "George W. Bush"
+	};
+
+	book.author = "Jeffrey A. Kottler";
+
+	console.log("The author of " + book.title + " should be Jeffrey A. Kottler: ", book.author); -->
+
+
+
+
+<!-- var deckOfCards = {
+  cardCount: 52,
+  draw: function (number) {
+    this.cardCount -= number;
+  }
+};
+
+deckOfCards.draw(15);
+console.log("Example #1", deckOfCards.cardCount); -->
+
+
+
+<!-- 	var func = function (amount) {
+	  this.x += amount;
+	  return this.x;
+	};
+
+	var ex2 = func(11);
+	console.log("Example #2", ex2); -->
+
+
+
+<!-- 	var func = function (amount) {
+	  this.x += amount;
+	  return this.x;
+	};
+	var obj = {
+	  x: 1,
+	  f: func
+	};
+
+	var ex3 = obj.f(11);
+	console.log("Example #3", ex3); -->
+
+
+
+
+<!-- 	var dog = {};
+	dog['sound'] = 'ruff';
+	dog.bark = function () {
+	  return this.sound + '!';
+	};
+
+	console.log("Dog should bark 'ruff!':", dog.bark()); -->
+
+
+
+<!-- 	var speak = function (){
+	  return "I want to eat " + this.favFood;
+	};
+
+	var rabbit = {
+	  speak: speak,
+	  favFood: 'carrot'
+	};
+	var mouse = {
+	  speak: speak,
+	  favFood: 'cheese'
+	};
+
+	console.log("The mouse says:", mouse.speak());
+	console.log("The rabbit says:", rabbit.speak()); -->
+
+
+
+	<!-- 	var cuteAndCuddlyForestAnimal = {
+		  mood: 'lackadaisical',
+		  listen: function() {
+		  	this.mood = 'alert'
+		  }
+		};
+
+		var hunter = {
+		  shoot: function (animal) {
+		    if (animal.mood === 'alert') {
+		      return "Yes! It dodged the bullet!";
+		    }
+		    else {
+		      return "no0ooOo0o(1-1)o";
+		    }
+		  }
+		}
+
+		cuteAndCuddlyForestAnimal.listen();
+
+		var result = hunter.shoot(cuteAndCuddlyForestAnimal);
+		console.log("NO a hunter! Did it live?", result); -->
+
+
+
+
+
+
+
+
+
+<!-- 	var computer = { active: false };
+	var otherComputer = { active: false };
+
+	computer.switchOn = function () {
+		this.active = true;
+	};
+
+	otherComputer.switchOn = computer.switchOn;
+
+	computer.switchOn();
+	console.log("Computer should be active:", computer.active === true);
+
+	otherComputer.switchOn();
+	console.log("Other computer should be active:", otherComputer.active === true) -->
